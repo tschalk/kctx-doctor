@@ -21,6 +21,10 @@ Check the current context from the default kubeconfig:
 kctx-doctor
 ```
 
+When `--kubeconfig` is omitted, `kctx-doctor` uses the standard Kubernetes
+client loading rules. This respects `KUBECONFIG` and falls back to
+`~/.kube/config`.
+
 Check a specific file and context:
 
 ```sh
@@ -56,4 +60,3 @@ The selected namespace is reported as informational context when it is not set.
 - `0`: no failed checks
 - `1`: failed checks, or warnings when `--strict` is enabled
 - `2`: invalid command-line usage
-
