@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Config
+current-context: local
+clusters:
+  - name: local-cluster
+    cluster:
+      server: http://127.0.0.1:8080
+      insecure-skip-tls-verify: true
+users:
+  - name: local-user
+    user:
+      auth-provider:
+        name: oidc
+contexts:
+  - name: local
+    context:
+      cluster: local-cluster
+      user: local-user
+

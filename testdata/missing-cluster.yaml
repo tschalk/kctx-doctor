@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Config
+current-context: broken
+clusters: []
+users:
+  - name: dev-user
+    user:
+      token: test-token
+contexts:
+  - name: broken
+    context:
+      cluster: missing-cluster
+      user: dev-user
+
